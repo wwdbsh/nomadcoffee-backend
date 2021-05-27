@@ -5,10 +5,12 @@ export default gql`
         id:Int!
         username:String!
         email:String!
-        name:String!
-        location:String!
+        name:String
         avatarURL:String
+        location:String
         githubUsername:String
+        createdAt:String!
+        updatedAt:String!
     }
     type MutationResponse{
         ok:Boolean!
@@ -18,10 +20,9 @@ export default gql`
         createAccount(
             username:String!
             email:String!
-            name:String!
-            location:String!
             password:String!
-            avatarURL:String
+            name:String
+            location:String
             githubUsername:String
         ):MutationResponse
     }

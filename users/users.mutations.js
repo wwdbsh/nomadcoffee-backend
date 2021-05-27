@@ -9,7 +9,6 @@ export default{
             name,
             location,
             password,
-            avatarURL,
             githubUsername
         }) => {
             try{
@@ -36,11 +35,10 @@ export default{
                     data:{
                         username,
                         email,
+                        password:uglyPassword,
                         name,
                         location,
-                        avatarURL,
                         githubUsername,
-                        password:uglyPassword,
                     }
                 });
                 return {
