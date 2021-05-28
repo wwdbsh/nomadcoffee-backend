@@ -12,21 +12,4 @@ export default gql`
         createdAt:String!
         updatedAt:String!
     }
-    type MutationResponse{
-        ok:Boolean!
-        error:String
-    }
-    type Mutation{
-        createAccount(
-            username:String!
-            email:String!
-            password:String!
-            name:String
-            location:String
-            githubUsername:String
-        ):MutationResponse
-    }
-    type Query{
-        seeProfile(username:String!):User
-    }
 `;
