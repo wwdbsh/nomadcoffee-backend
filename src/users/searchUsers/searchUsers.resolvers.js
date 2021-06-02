@@ -12,4 +12,4 @@ export default {
             skip:(page-1)*5
         }),
     }
-}
+};
