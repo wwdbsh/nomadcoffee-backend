@@ -7,6 +7,7 @@ export default gql`
         email:String!
         name:String
         avatarURL:String
+        shops:[CoffeeShop]
         location:String
         githubUsername:String
         createdAt:String!

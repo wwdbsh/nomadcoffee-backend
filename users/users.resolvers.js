@@ -43,6 +43,7 @@ export default {
             return Boolean(exists);
         },
         followers:({ id }, { page }) => client.user.findUnique({ where:{ id } }).followers({take:5,skip:(page-1)*5}),
-        following:({ id }, { page }) => client.user.findUnique({ where:{ id } }).following({take:5,skip:(page-1)*5})
+        following:({ id }, { page }) => client.user.findUnique({ where:{ id } }).following({take:5,skip:(page-1)*5}),
+        shops: ({ id }) => client.user.findUnique({ where:{ id } }).shops(),
     }
 };

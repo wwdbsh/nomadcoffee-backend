@@ -13,3 +13,18 @@
 - [x] See Following w/ Pagination
 - [x] Computed Fields
 - [x] Search Users
+
+## Coffee Shop Photos
+
+## Coffee Shop
+
+- [x] Create Coffee Shop
+- [x] See Coffee Shop
+- [x] See Coffee Shops
+- [x] Edit Coffee Shop
+
+## Category
+
+- [x] Create Category
+- [x] See Categories
+- [x] See Category
