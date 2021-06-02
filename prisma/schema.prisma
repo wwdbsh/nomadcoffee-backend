@@ -20,6 +20,7 @@ model User{
   avatarURL       String?
   githubUsername  String?
   shops           CoffeeShop[]
+  likes           Like[]
   followers       User[] @relation("FollowRelation", references:[id])
   following       User[] @relation("FollowRelation", references:[id])
   createdAt       DateTime @default(now())
@@ -40,21 +41,34 @@ model CoffeeShop{
 }
 
 model CoffeeShopPhoto{
-  id              Int        @id @default(autoincrement())
-  url             String     @unique
-  shop            CoffeeShop? @relation(fields:[shopId], references:[id])
-  shopId          Int?        
-  createdAt       DateTime   @default(now())
-  updatedAt       DateTime   @updatedAt
+  id         Int         @id @default(autoincrement())
+  url        String      @unique
+  shop       CoffeeShop? @relation(fields:[shopId], references:[id])
+  shopId     Int?        
+  likes      Like[]
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
 }
 
 
 model Category{
-  id              Int           @id @default(autoincrement())
-  name            String        @unique
-  slug            String?       
-  shops           CoffeeShop[]
-  totalShops      Int?
-  createdAt       DateTime      @default(now())
-  updatedAt       DateTime      @updatedAt
+  id          Int           @id @default(autoincrement())
+  name        String        @unique
+  slug        String?       
+  shops       CoffeeShop[]
+  totalShops  Int?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+model Like{
+  id        Int             @id @default(autoincrement())
+  photo     CoffeeShopPhoto @relation(fields: [photoId], references:[id])
+  user      User            @relation(fields: [userId], references:[id])
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+  photoId   Int
+  userId    Int
+  
+  @@unique([photoId, userId])
 }

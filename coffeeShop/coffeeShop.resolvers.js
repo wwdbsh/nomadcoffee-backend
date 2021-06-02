@@ -39,5 +39,8 @@ export default {
                 }
             }
         }),
+    },
+    CoffeeShopPhoto:{
+        likes: ({ id }) => client.like.count({ where:{ photoId:id } })
     }
 };

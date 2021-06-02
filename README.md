@@ -16,6 +16,8 @@
 
 ## Coffee Shop Photos
 
+- [x] Like/Unlike Photo
+
 ## Coffee Shop
 
 - [x] Create Coffee Shop
