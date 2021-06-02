@@ -33,6 +33,7 @@
     "graphql-tools": "^7.0.2",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
+    "fs-capacitor": "^6.2.0",
     "prettier-plugin-prisma": "^0.10.1"
   },
   "devDependencies": {
